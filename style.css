@@ -1,0 +1,259 @@
+* {
+ box-sizing: border-box;
+}
+
+:root {
+ --ink: #29252b;
+ --muted: #716a73;
+ --paper: #fffaf2;
+ --card: #ffffff;
+ --orange: #e87532;
+ --orange-dark: #a94718;
+ --purple: #5c456f;
+ --line: #eadfd2;
+ --soft-orange: #fff0e3;
+}
+
+body {
+ margin: 0;
+ min-height: 100vh;
+ background:
+  radial-gradient(circle at 10% 5%, rgba(232, 117, 50, 0.15), transparent 25rem),
+  radial-gradient(circle at 95% 95%, rgba(92, 69, 111, 0.12), transparent 24rem),
+  #f7f1e9;
+ color: var(--ink);
+ font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+ line-height: 1.8;
+ padding: 28px 16px;
+}
+
+.game-shell {
+ width: min(860px, 100%);
+ margin: 0 auto;
+}
+
+.top-bar {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 12px;
+ color: var(--muted);
+ font-size: 0.8rem;
+ letter-spacing: 0.12em;
+ margin-bottom: 22px;
+}
+
+.brand {
+ font-weight: 800;
+}
+
+.day-label {
+ background: #fff;
+ border: 1px solid var(--line);
+ border-radius: 999px;
+ padding: 3px 12px;
+ letter-spacing: 0;
+}
+
+.hero {
+ background: var(--purple);
+ color: #fffaf5;
+ padding: 34px 28px;
+ border-radius: 22px;
+ margin-bottom: 18px;
+ box-shadow: 0 12px 30px rgba(55, 35, 68, 0.12);
+ overflow: hidden;
+ position: relative;
+}
+
+.hero::after {
+ position: absolute;
+ right: 24px;
+ bottom: 0;
+ font-size: clamp(3rem, 10vw, 6.5rem);
+ opacity: 0.18;
+ transform: rotate(-12deg);
+}
+
+.eyebrow {
+ font-size: 0.72rem;
+ letter-spacing: 0.2em;
+ margin: 0 0 6px;
+ opacity: 0.78;
+}
+
+h1 {
+ margin: 0;
+ font-size: clamp(1.8rem, 5vw, 3rem);
+ line-height: 1.25;
+}
+
+.subtitle {
+ max-width: 590px;
+ margin: 12px 0 0;
+ color: #f3e8f8;
+}
+
+.status-panel {
+ background: rgba(255, 255, 255, 0.78);
+ border: 1px solid var(--line);
+ border-radius: 16px;
+ padding: 14px 18px;
+ margin-bottom: 18px;
+}
+
+.status-heading {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ font-weight: 800;
+}
+
+.status-content {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 8px;
+ padding-top: 10px;
+}
+
+.status-pill {
+ background: var(--soft-orange);
+ color: #713c1f;
+ border-radius: 999px;
+ padding: 4px 11px;
+ font-size: 0.86rem;
+}
+
+.story-card {
+ background: var(--card);
+ border: 1px solid var(--line);
+ border-radius: 22px;
+ padding: clamp(20px, 5vw, 36px);
+ min-height: 340px;
+ box-shadow: 0 12px 30px rgba(57, 44, 33, 0.06);
+}
+
+.scene-label {
+ display: inline-block;
+ color: var(--orange-dark);
+ background: var(--soft-orange);
+ border-radius: 999px;
+ padding: 3px 12px;
+ font-size: 0.84rem;
+ font-weight: 800;
+ margin-bottom: 16px;
+}
+
+.story-text p {
+ margin: 0 0 14px;
+ white-space: pre-line;
+}
+
+.story-text p:last-child {
+ margin-bottom: 0;
+}
+
+.dialogue {
+ padding-left: 14px;
+ border-left: 3px solid #efbd9b;
+ margin: 12px 0 !important;
+}
+
+.dialogue strong {
+ color: var(--purple);
+}
+
+.choices {
+ display: grid;
+ grid-template-columns: 1fr;
+ gap: 10px;
+ margin-top: 28px;
+}
+
+.choice-button {
+ width: 100%;
+ border: 1px solid #e5d8cc;
+ background: #fffdf9;
+ color: var(--ink);
+ border-radius: 13px;
+ padding: 13px 16px;
+ text-align: left;
+ font: inherit;
+ cursor: pointer;
+ transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.choice-button:hover {
+ border-color: var(--orange);
+ background: #fff5ec;
+ transform: translateY(-1px);
+}
+
+.choice-button.primary {
+ text-align: center;
+ background: var(--orange);
+ border-color: var(--orange);
+ color: white;
+ font-weight: 800;
+}
+
+.choice-button.primary:hover {
+ background: var(--orange-dark);
+}
+
+.small-button,
+.text-button {
+ border: 0;
+ background: transparent;
+ color: var(--purple);
+ font: inherit;
+ cursor: pointer;
+}
+
+.small-button {
+ font-size: 0.8rem;
+ text-decoration: underline;
+}
+
+footer {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 12px;
+ color: var(--muted);
+ font-size: 0.82rem;
+ padding: 18px 4px;
+}
+
+.hidden {
+ display: none !important;
+}
+
+@media (min-width: 650px) {
+ .choices {
+  grid-template-columns: 1fr 1fr;
+ }
+
+ .choice-button.primary:only-child {
+  grid-column: 1 / -1;
+ }
+}
+
+@media (max-width: 480px) {
+ body {
+  padding: 16px 10px;
+ }
+
+ .hero {
+  padding: 27px 20px;
+ }
+
+ .story-card {
+  border-radius: 17px;
+ }
+
+ footer {
+  align-items: flex-start;
+  flex-direction: column;
+ }
+}

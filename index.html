@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>萬聖節的蜜瓜包事件</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="top-bar">
+      <div class="brand">MIU404 GAME</div>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">A HALLOWEEN MYSTERY</p>
+      <h1>萬聖節的蜜瓜包事件</h1>
+      <p class="subtitle">一對不太像普通搭檔的刑警在萬聖節一起追查一件遺失物的案子。</p>
+    </section>
+
+    <section id="status-panel" class="status-panel hidden" aria-live="polite" style="display: none;">
+  <div class="status-heading">目前紀錄 <button id="toggle-status" class="small-button" type="button">收合數值</button></div>
+  <div id="status-content" class="status-content"></div>
+</section>
+
+    <section class="story-card">
+      <div id="scene-label" class="scene-label">遊戲開始</div>
+      <div id="story-text" class="story-text">
+        <p>準備好一起調查這起奇怪的案件了嗎？</p>
+      </div>
+      <div id="choices" class="choices">
+        <button class="choice-button primary" type="button" data-action="start">開始遊戲</button>
+      </div>
+    </section>
+
+    <footer>
+      <button id="restart-button" class="text-button" type="button">重新開始</button>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
